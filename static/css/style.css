@@ -1,0 +1,63 @@
+/* General Styling */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    background-color: #f8f9fa;
+    font-family: "Inter", sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2E7D32;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Card Container */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+/* Cards */
+.card {
+    width: 300px;
+    border: none;
+    border-radius: 10px;
+    transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h4 {
+    font-weight: bold;
+}
+
+.card i {
+    font-size: 2.5rem;
+    color: #2E7D32;
+}
+
+/* Buttons */
+.btn-custom {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+}
