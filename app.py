@@ -8,11 +8,11 @@ def home():
 
 @app.route('/dtr')
 def dtr():
-    return redirect('http://localhost:5001/')  # Redirect to DTR System
+    return redirect('http://172.16.255.220:5001/')  # Redirect to DTR System
 
 @app.route('/logs')
 def logs():
-    return redirect('http://localhost:5003/')  # Redirect to Logging System
+    return redirect('http://172.16.255.220:5003/')  # Redirect to Logging System
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=True)
