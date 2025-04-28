@@ -15,8 +15,5 @@ def logs():
     return redirect('http://172.16.255.220:5003/')  # Redirect to Logging System
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80, debug=True)
-
-if __name__ == '__main__':
     serve(app, host='0.0.0.0', port=80)
     # app.run(host='0.0.0.0', port=80, debug=True)
