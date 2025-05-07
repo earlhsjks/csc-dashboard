@@ -14,6 +14,10 @@ def dtr():
 def logs():
     return redirect('http://172.16.255.220:5003/')  # Redirect to Logging System
 
+@app.route('/clearance')
+def clearance():
+    return redirect('http://172.16.255.220:5005/')  # Redirect to Clearance System
+
 if __name__ == '__main__':
     serve(app, host='0.0.0.0', port=80)
     # app.run(host='0.0.0.0', port=80, debug=True)
