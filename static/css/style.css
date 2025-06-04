@@ -1,12 +1,10 @@
-/* General Styling */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 body {
     background-color: #f8f9fa;
     font-family: "Inter", sans-serif;
 }
 
-/* Hero Section */
 .hero-section {
     text-align: center;
     padding: 60px 20px;
@@ -15,7 +13,7 @@ body {
 .hero-section h1 {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #2E7D32;
+    color: #2e7d32;
 }
 
 .hero-section p {
@@ -23,23 +21,16 @@ body {
     color: #555;
 }
 
-/* Card Container */
-.card-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-/* Cards */
 .card {
-    width: 300px;
     border: none;
     border-radius: 10px;
-    transition: 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card:hover {
@@ -53,11 +44,26 @@ body {
 
 .card i {
     font-size: 2.5rem;
-    color: #2E7D32;
+    color: #2e7d32;
 }
 
-/* Buttons */
 .btn-custom {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding: 10px 20px;
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+    padding: 40px 10px;
+    }
+    .hero-section h1 {
+    font-size: 2rem;
+    }
+    .hero-section p {
+    font-size: 1rem;
+    }
+    .btn-custom {
+    font-size: 1rem;
+    padding: 8px 16px;
+    }
 }
