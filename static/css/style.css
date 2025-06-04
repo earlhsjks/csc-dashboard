@@ -33,6 +33,18 @@ body {
   justify-content: space-between;
 }
 
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px; /* Uniform spacing between all cards */
+}
+
+.custom-card {
+  width: 320px;
+  flex: 0 0 auto;
+}
+
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
