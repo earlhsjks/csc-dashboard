@@ -3,54 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSC Systems</title>
+    <title>CSC Gateway - System Access</title>
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+    <link rel="shortcut icon" href="/static/media/ndmu_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                },
+                extend: {
+                    colors: {
+                        slate: {
+                            50: '#f8fafc',
+                            200: '#e2e8f0', // Borders
+                            300: '#cbd5e1', // Disabled/Icons
+                            400: '#94a3b8', // Captions
+                            500: '#64748b', // Body text
+                            600: '#475569', // Interactive Icon Default
+                            900: '#0f172a', // Headings
+                        },
+                        blue: {
+                            50: '#eff6ff',  // Hover background
+                            600: '#2563eb', // Primary Action
+                            700: '#1d4ed8', // Active Text
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    
-    <!-- Font Awesome for Icons -->
-    <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-900 antialiased min-h-screen flex flex-col items-center justify-center p-6">
 
-    <!-- Hero Section -->
-    <div class="hero-section text-center py-5 bg-light">
-        <h1>Computer Center Web Systems</h1>
-        <p>Select a system to access below</p>
-    </div>
+    <main class="w-full max-w-5xl">
+        
+        <header class="text-center mb-12">
+            <span class="block text-xs font-medium uppercase tracking-wider text-slate-400 mb-4">
+                System Gateway
+            </span>
+            <h1 class="text-4xl font-bold tracking-tight text-slate-900 mb-4">
+                Computer Science Center
+            </h1>
+            <p class="text-base text-slate-500 max-w-xl mx-auto leading-relaxed">
+                Select a subsystem below to authenticate. Access is logged and restricted to authorized personnel.
+            </p>
+        </header>
 
-	<!-- Card Section -->
-	<div class="container card-container my-5">
-	  <div class="card-row">
-		<div class="card text-center p-4 h-100 shadow custom-card">
-		  <i class="fas fa-clock fa-3x mb-3"></i>
-		  <h4>DTR System</h4>
-		  <p>Access the GIA's Daily Time Record System.</p>
-		  <a href="{{ url_for('dtr') }}" class="btn btn-success btn-custom mt-auto">Go to DTR</a>
-		</div>
-		<div class="card text-center p-4 h-100 shadow custom-card">
-		  <i class="fas fa-clipboard-list fa-3x mb-3"></i>
-		  <h4>Logging System</h4>
-		  <p>Access the Logging System for OpenLab, Meds, and Equipment.</p>
-		  <a href="{{ url_for('logs') }}" class="btn btn-warning btn-custom mt-auto">Go to Logs</a>
-		</div>
-		<div class="card text-center p-4 h-100 shadow custom-card">
-		  <i class="fas fa-check-circle fa-3x mb-3"></i>
-		  <h4>Clearance System</h4>
-		  <p>Access the Computer Center Clearance System.</p>
-		  <a href="{{ url_for('clearance') }}" class="btn btn-success btn-custom mt-auto">Go to Clearance</a>
-		</div>
-	  </div>
-	</div>
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            <a href="{{ url_for('dtr') }}" class="group flex flex-col h-full bg-white border border-slate-200 rounded-lg p-8 
+                       transition-all duration-200 ease-out
+                       hover:border-blue-600 hover:shadow-lg hover:-translate-y-1
+                       focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2">
+                
+                <div class="flex items-center justify-between mb-6">
+                    <div class="p-3 bg-slate-50 rounded-md group-hover:bg-blue-50 transition-colors duration-200">
+                        <i data-lucide="clock" class="w-6 h-6 text-slate-700 group-hover:text-blue-600 transition-colors duration-200"></i>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-slate-300 group-hover:text-blue-600 transition-colors duration-200"></i>
+                </div>
+                
+                <h2 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
+                    DTR System
+                </h2>
+                <p class="text-sm text-slate-500 leading-relaxed">
+                    Access the GIA's Daily Time Record System.
+                </p>
+            </a>
 
+            <a href="#" class="group flex flex-col h-full bg-white border border-slate-200 rounded-lg p-8 
+                       transition-all duration-200 ease-out
+                       hover:border-blue-600 hover:shadow-lg hover:-translate-y-1
+                       focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2">
+                
+                <div class="flex items-center justify-between mb-6">
+                    <div class="p-3 bg-slate-50 rounded-md group-hover:bg-blue-50 transition-colors duration-200">
+                        <i data-lucide="clipboard-list" class="w-6 h-6 text-slate-700 group-hover:text-blue-600 transition-colors duration-200"></i>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-slate-300 group-hover:text-blue-600 transition-colors duration-200"></i>
+                </div>
+                
+                <h2 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
+                    Logging System
+                </h2>
+                <p class="text-sm text-slate-500 leading-relaxed">
+                    Access the Logging System for OpenLab, Meds, and Equipment.
+                </p>
+            </a>
+
+            <a href="{{ url_for('clearance') }}" class="group flex flex-col h-full bg-white border border-slate-200 rounded-lg p-8 
+                       transition-all duration-200 ease-out
+                       hover:border-blue-600 hover:shadow-lg hover:-translate-y-1
+                       focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2">
+                
+                <div class="flex items-center justify-between mb-6">
+                    <div class="p-3 bg-slate-50 rounded-md group-hover:bg-blue-50 transition-colors duration-200">
+                        <i data-lucide="badge-check" class="w-6 h-6 text-slate-700 group-hover:text-blue-600 transition-colors duration-200"></i>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-slate-300 group-hover:text-blue-600 transition-colors duration-200"></i>
+                </div>
+                
+                <h2 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
+                    Clearance System
+                </h2>
+                <p class="text-sm text-slate-500 leading-relaxed">
+                    Access the Computer Center Clearance System.
+                </p>
+            </a>
+
+        </section>
+
+        <footer class="mt-16 text-center border-t border-slate-200 pt-8">
+            <p class="text-sm text-slate-400">
+                &copy; 2024 CSC Architecture. System integrity verified.
+            </p>
+        </footer>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
